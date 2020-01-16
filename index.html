@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Random Password Generator</title>
+
+
 </head>
 <body>
+
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand">Random Password Generator</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="password_generator">
+                    <h4>Random Password Generator</h4>
+                    <br>
+                    <input type="text" id="display"> 
+                    <br>
+                    <input type="range" min="0" max="30" name="slider" id="slider">
+                    <br>
+                    <button onclick="generate()">Generate</button>
+                    <button onclick="clipboard()">Copy to ClipBoard</button>
+                    <div id="length">Result of Password</div>
+                    
+                </div>
+                
+                <div class="passwords_generated">
+                    <b>Passwords Created</b>
+                    <br>
+                    <div id="last_numbers"></div>
+                </div>
+            
+
+            </div>
+        </div>
+    </div>
+
+    <script src="./javascript.js"></script>
+
     
 </body>
 </html>
