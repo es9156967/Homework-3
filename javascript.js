@@ -1,15 +1,15 @@
 //generate random password
 function generate(){
 
-    let complexity = document.getElementById("slider").value;
+    let random = document.getElementById("slider").value;
 
-    let values ="ABCDEFGHIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxy1234567890!@#$%^&*()_+";
+    const values ="ABCDEFGHIJKLMNOPQURSTUVWXYZabcdefghijklmnopqrstuvwxy1234567890!@#$%^&*()_+";
 
     let password = "";
 
     //create loop to choose password charcters//
 
-    for(var i=0; i <= complexity; i++){
+    for(var i=0; i <= random; i++){
         password= password + values.charAt(Math.floor(Math.random() * Math.floor(values.length -1)));
     }
 
@@ -22,7 +22,7 @@ function generate(){
 }
 
 
-document.getElementById("length").innerHTML = "Length: 25";
+document.getElementById("length").innerHTML = "Length: 50";
 
 
 document.getElementById("slider").oninput = function(){
