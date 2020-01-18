@@ -1,4 +1,5 @@
 //generate random password
+//using ES6 let and const//
 function generate(){
 
     let random = document.getElementById("slider").value;
@@ -9,8 +10,8 @@ function generate(){
 
     //create loop to choose password charcters//
 
-    for(var i=0; i <= random; i++){
-        password= password + values.charAt(Math.floor(Math.random() * Math.floor(values.length -1)));
+    for(var i=0; i < random; i++){
+        password += values[Math.floor(Math.random() * (values.length - 1 ))];
     }
 
     //adding password to dsipay//
@@ -30,7 +31,7 @@ document.getElementById("slider").oninput = function(){
         document.getElementById("length").innerHTML = "length: " + document.getElementById("slider").value;
     }
     else{
-        document.getElementById("length").innerHTML = "Length: 1";
+        document.getElementById("length").innerHTML = "Length: 0";
     }
 }
 
@@ -42,3 +43,6 @@ function clipboard(){
 
     alert("Copied");
 }
+
+
+document.getElementById("operation_button").addEventListener("click", generate());
