@@ -4,50 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
-    <title>Random Password Generator</title>
 
-
+    <link rel="stylesheet" type="text/css" href="assets/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Password Generator</title>
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand">Random Password Generator</a>
-    </nav>
+    <header>
+        <h1>Password Generator</h1>
+    </header>
 
-    <div class="container">
-        <div>
-            <div class="col-lg-8 col-sm-12 mx-auto">
-                <div class="password_generator">
-                    <h4>Eddie's Password Generator</h4>
-                    <br>
-                    <input type="text" id="display"> 
-                    <br>
-                    <br>
-                    <input type="text" id="idLength" placeholder="enter character length"> 
-                    <br>
-                    <button id="operation_button" onclick="generate()" >Generate</button>
-                    <button id="copybttn" onclick="clipboard()">Copy to ClipBoard</button>
-                    <div id="length">Result of Password</div>
-                    
-                </div>
-                
-                <div class="passwords_generated">
-                    <p>Passwords Created</p>
-                    <br>
-                    <div id="last_numbers"></div>
-                </div>
-            
+    <section>
+        <form class="password-criterea" action="submit">
+            <h2>Number of Characters</h2>
+            <div class="slider-container">
+                <p id="demo"> </p>
+                <input class="slider" id ="myRange" type="range" min="8" max="128" value="68">
+            </div>
+            <h2>Type of Characters</h2>
+            <div class="password-criterea-row">
+                <input type="checkbox" class="type-of-chars special">
+                <p class="checkbox-p">Special Characters</p>
+            </div>
+            <br>
+            <div class="password-criterea-row">
+                <input type="checkbox" class="type-of-chars numbers">
+                <p class="checkbox-p">Numbers</p>
+            </div>
+            <br>
+            <div class="password-criterea-row">
+                <input type="checkbox" class="type-of-chars uppercase">
+                <p class="checkbox-p">Uppercase</p class="checkbox-p">
+            </div>
+            <br>
+            <div class="password-criterea-row">                
+                <input type="checkbox" class="type-of-chars lowercase">
+                <p class="checkbox-p">Lowercase</p>
+            </div>
+            <p class="password-criterea-caption"></p>
+        </form>
 
+        <div class="password-container">
+            <div class="password-display">
+                <textarea spellcheck="false" id="password"></textarea>
+            </div>
+            <div class="buttons">
+                <button class="generate-password">Generate</button>
+                <button class="clipboard-copy">Copy</button>
             </div>
         </div>
-    </div>
+    </section>
 
-<!--     <script src="./javascript.js"></script>
- -->    <script src="./javascript2.js"></script>
-
-
-    
+    <script src="javascript.js"></script>
 </body>
 </html>
